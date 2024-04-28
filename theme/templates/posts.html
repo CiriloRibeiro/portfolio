@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+    {% block content %}
+        {% block posts %}
+            <section class="text-gray-600 body-font">
+                <div class="container px-5 py-2 mx-auto">
+                <div class="flex flex-wrap -m-4">
+                    {% comment %}  {% endcomment %}
+                    {% block post %}
+                    
+                    {% endblock post %}
+                </div>
+                </div>
+            </section>
+        {% endblock posts %}
+    {% endblock content %}

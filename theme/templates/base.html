@@ -1,0 +1,25 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>João Cirilo's Portfolio</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+		
+		<div class="container mx-auto">
+			{% include "components/navbar.html" %}
+				{% include "components/hero.html" %}
+				{% block content %}
+				teste
+				{% endblock content %}
+				{% comment %} {% include "components/posts.html" %} {% endcomment %}
+			{% include "components/footer.html" %}
+		</div>
+		
+	</body>
+</html>
