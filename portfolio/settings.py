@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vr3!xp@qm$)dg4#4#!=6xbt0-m%c(da@kn==_=jz8@e0(c+3!='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh"]
 
@@ -94,26 +94,32 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.environ.get("DB_NAME"),
-#         'USER': os.environ.get("DB_USER"),
-#         'PASSWORD': os.environ.get("DB_PASSWORD"),
-#         'HOST': os.environ.get("DB_HOST"),
-#         'PORT': os.environ.get("DB_PORT"),
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
 
+# settings.py
 
-DATABASES['default'] = dj_database_url.config()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'xvDyKaA8HCq9',
+        'HOST': 'ep-hidden-dust-a4cw9xp1.us-east-1.aws.neon.tech',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        }
+    }
+}
+
+
+
+# DATABASES['default'] = dj_database_url.config("postgres://default:xvDyKaA8HCq9@ep-hidden-dust-a4cw9xp1.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
