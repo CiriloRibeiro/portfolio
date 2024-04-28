@@ -1,5 +1,6 @@
 {% extends "posts.html" %}
 {% block post %}
+    {% include "components/loader.html" %}
     <!-- Hide the posts initially -->
     <div id="posts" class="hidden">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -68,6 +69,7 @@
     <!-- JavaScript to hide the loader and show the posts after images are loaded -->
     <script>
         window.addEventListener('load', function() {
+            document.querySelector('.loader').style.display = 'none'; // Hide the loader
             document.getElementById('posts').classList.remove('hidden'); // Show the posts
         });
     </script>
