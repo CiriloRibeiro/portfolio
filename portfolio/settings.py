@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
-from decouple import config
+# import dj_database_url
+# from decouple import config
 
 # from dotenv import load_dotenv
 # load_dotenv()
@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-vr3!xp@qm$)dg4#4#!=6xbt0-m%c(da@kn==_=jz8@e0(c+3!=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh"]
+ALLOWED_HOSTS = ['*']
 
 INTERNAL_IPS = [
     "127.0.0.1",
